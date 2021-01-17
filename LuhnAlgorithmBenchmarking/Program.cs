@@ -70,6 +70,7 @@ namespace LuhnAlgorithmBenchmarking {
 			}
 
 			byte[] arr = new byte[16];
+			arr[15] = (byte) '0';
 
 			Vector128<byte> inputVector;
 			unsafe {
@@ -133,6 +134,7 @@ namespace LuhnAlgorithmBenchmarking {
 			}
 
 			byte[] arr = new byte[16];
+			arr[15] = (byte) '0';
 
 			Vector128<byte> inputVector;
 			unsafe {
@@ -144,8 +146,6 @@ namespace LuhnAlgorithmBenchmarking {
 					inputVector = Sse2.LoadVector128(arrRef);
 				}
 			}
-
-			arr[15] = (byte) '0';
 
 			Vector128<byte> substractResult = Sse2.Subtract(
 				inputVector,
